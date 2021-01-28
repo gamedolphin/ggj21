@@ -83,7 +83,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd9e23ecf5c043ecad77d51cae266eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 20
+  muzzleFlashSprite: {fileID: -2413806693520163455, guid: cc24e69cd9de44ccf86683da4b4b4676, type: 3}
+  muzzleFlashFrames: 2
 --- !u!1 &4043345657530299662
 GameObject:
   m_ObjectHideFlags: 0
