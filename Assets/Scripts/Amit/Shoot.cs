@@ -16,9 +16,11 @@ public class Shoot : MonoBehaviour
     [SerializeField] int maxAmmo = 20;
 
     int currentAmmo;
+    public bool IsBulletActive { get; set; }
 
     private void Start()
     {
+        IsBulletActive = false;
         currentAmmo = maxAmmo;
         UpdateAmmoText();
     }
@@ -26,7 +28,7 @@ public class Shoot : MonoBehaviour
     private void Update()
     {
         LookAtMousePosition();
-        if(Input.GetMouseButtonDown(0) && HasAmmo())
+        if(Input.GetMouseButtonDown(0) && HasAmmo() && !IsBulletActive)
         {
             ShootBullet();
             ReduceAmmo(1);
@@ -44,6 +46,7 @@ public class Shoot : MonoBehaviour
     private void ShootBullet()
     {
         GameObject bullet = Instantiate(bulletPrefab, reticule.position, transform.rotation);
+        IsBulletActive = true;
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(transform.up * bulletSpeed, ForceMode2D.Impulse);
     }
