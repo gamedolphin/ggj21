@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzleFlashSprite: {fileID: -2413806693520163455, guid: cc24e69cd9de44ccf86683da4b4b4676, type: 3}
+  impactFX: {fileID: 3421726726035959646, guid: 2436ad8f27aea4093b3f77aea7fbb5f5, type: 3}
   muzzleFlashFrames: 2
 --- !u!1 &4043345657530299662
 GameObject:

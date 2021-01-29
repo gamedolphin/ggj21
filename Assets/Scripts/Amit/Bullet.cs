@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] Sprite muzzleFlashSprite;
+    [SerializeField] GameObject impactFX;
     [SerializeField] int muzzleFlashFrames = 3;
 
     Sprite defaultSprite;
@@ -44,6 +45,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Instantiate(impactFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
