@@ -23,10 +23,7 @@ public class Bullet : MonoBehaviour
         StartCoroutine(ShowMuzzleFlash());
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-    }
+    
 
     private IEnumerator ShowMuzzleFlash()
     {
@@ -41,4 +38,10 @@ public class Bullet : MonoBehaviour
         spriteRenderer.sprite = defaultSprite;
         spriteRenderer.color = defaultColor;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+
 }

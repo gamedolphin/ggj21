@@ -1,20 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Shoot : MonoBehaviour
 {
 
+    [Header("Object References")]
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform reticule;
+    [SerializeField] TextMeshProUGUI ammoText;
+
+    [Header("Config Parameters")]
     [SerializeField] float bulletSpeed = 20f;
+    [SerializeField] int maxAmmo = 20;
+
+    int currentAmmo;
+
+    private void Start()
+    {
+        currentAmmo = maxAmmo;
+        UpdateAmmoText();
+    }
 
     private void Update()
     {
         LookAtMousePosition();
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && HasAmmo())
         {
             ShootBullet();
+            ReduceAmmo(1);
         }
     }
 
@@ -32,5 +47,22 @@ public class Shoot : MonoBehaviour
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(transform.up * bulletSpeed, ForceMode2D.Impulse);
     }
+
+    private bool HasAmmo()
+    {
+        return currentAmmo > 0;
+    }
+
+    private void ReduceAmmo(int count)
+    {
+        currentAmmo -= count;
+        UpdateAmmoText();
+    }
+
+    private void UpdateAmmoText()
+    {
+        ammoText.text = string.Format("Ammo: {0}", currentAmmo);
+    }
+
 }
  
