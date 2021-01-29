@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 2774280003792239185}
   - component: {fileID: 2774280003792239187}
   - component: {fileID: 2774280003792239186}
+  - component: {fileID: 3987968577728241758}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -264,4 +265,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4043345655953045781, guid: 02dc501ae562543c29639da4b53c9dca, type: 3}
   reticule: {fileID: 2774280002231566120}
+  ammoText: {fileID: 0}
   bulletSpeed: 20
+  maxAmmo: 20
+--- !u!114 &3987968577728241758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774280003792239190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193d5359e2fb64477a3a4626d117f5db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
