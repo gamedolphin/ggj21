@@ -76,11 +76,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866f6a69aadb4634085d9390c6a771d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 20
+  maxSpeed: 10
   SeparationMultiplier: 1.5
   AlignmentMultiplier: 1
   CohesionMultiplier: 1
   PathMultiplier: 4
+  TargetTimeout: 5
   WorldRect:
     serializedVersion: 2
     x: 0
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3168677ef4abde19455379d543dedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avoidCircle: 0.5
+  avoidCircle: 1
   layer:
     serializedVersion: 2
     m_Bits: 256
@@ -173,7 +174,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.45555556, y: 0.99444443}
+    oldSize: {x: 0.29722223, y: 0.51111114}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

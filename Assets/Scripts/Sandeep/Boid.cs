@@ -84,5 +84,10 @@ public class Boid : MonoBehaviour
     private void OnDestroy()
     {
         onDestroy?.Invoke(this);
+
+        if (IsBad)
+        {
+            GameManager.Instance.GameWon(rBody.position);
+        }
     }
 }

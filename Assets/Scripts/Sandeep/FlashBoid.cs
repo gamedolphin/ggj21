@@ -19,14 +19,25 @@ public class FlashBoid : MonoBehaviour
         boid = GetComponent<Boid>();
         sp = GetComponent<SpriteRenderer>();
         originalColor = sp.color;
+
+        GameManager.Instance.onGameWin += OnGameWon;
     }
+
+    private Tween flashTween;
+    private Tween fadeTween;
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetButton("Jump") && boid.IsBad && Time.time - sinceLast > boid.TargetTimeout)
+
+        if (!boid.IsBad)
         {
-            sp.DOColor(highlightColor, 0.25f).SetOptions(false)
+            return;
+        }
+
+        if (Input.GetButton("Jump") && Time.time - boid.TargetTimeout > sinceLast)
+        {
+            flashTween = sp.DOColor(highlightColor, 0.25f).SetOptions(false)
                 .SetEase(Ease.InFlash, 2, 0)
                 .SetLoops(5, LoopType.Yoyo)
                 .OnComplete(DoneFlashing);
@@ -37,9 +48,29 @@ public class FlashBoid : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (flashTween != null )
+        {
+            flashTween.Kill();
+        }
+
+        if (fadeTween != null)
+        {
+            fadeTween.Kill();
+        }
+
+        GameManager.Instance.onGameWin -= OnGameWon;
+    }
+
     private void DoneFlashing()
     {
         sp.color = originalColor;
         transform.DOScale(1, 0.25f);
+    }
+
+    private void OnGameWon(Vector3 pos)
+    {
+        fadeTween = sp.DOFade(0, 0.25f);
     }
 }
