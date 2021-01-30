@@ -28,11 +28,14 @@ public class FlashBoid : MonoBehaviour
                 .SetEase(Ease.InFlash, 2, 0)
                 .SetLoops(5, LoopType.Yoyo)
                 .OnComplete(DoneFlashing);
+
+            transform.DOScale(1.5f, 1.5f);
         }
     }
 
     private void DoneFlashing()
     {
         sp.color = originalColor;
+        transform.DOScale(1, 0.25f);
     }
 }
