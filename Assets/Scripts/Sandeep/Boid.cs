@@ -70,8 +70,8 @@ public class Boid : MonoBehaviour
 
     private void SteerToVelocity()
     {
-         var rotation = Quaternion.LookRotation(rBody.velocity);
-         rBody.MoveRotation(rotation);
+         // var rotation = Quaternion.LookRotation(rBody.velocity);
+         // rBody.MoveRotation(rotation);
     }
 
     private void OnDestroy()

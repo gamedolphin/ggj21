@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3168677ef4abde19455379d543dedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avoidCircle: 0.1
+  avoidCircle: 0.5
   layer:
     serializedVersion: 2
     m_Bits: 256
@@ -220,7 +220,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: f5b90f95eda438bad963cb62f68d497f, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: dd68621cc57fb41d39d37bb1ac21ef4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

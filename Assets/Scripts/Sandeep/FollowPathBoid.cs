@@ -10,7 +10,7 @@ public class FollowPathBoid : MonoBehaviour, IBoid
 
     private BoidPath path;
 
-    private float pathPredict = 5;
+    private float pathPredict = 1;
 
     private void Awake()
     {
@@ -21,6 +21,7 @@ public class FollowPathBoid : MonoBehaviour, IBoid
 
     public Vector2 UpdateBoid(List<Boid> allBoids)
     {
+        path = boid.Path;
         if (path == null)
         {
             return Vector2.zero;
@@ -65,7 +66,7 @@ public class FollowPathBoid : MonoBehaviour, IBoid
 
         if (worldRecord > path.radius)
         {
-            return TargetBoid.Steer(target, rBody, 10, boid) * boid.PathMultiplier;
+            return TargetBoid.Steer(target, rBody, 0, boid) * boid.PathMultiplier;
         }
 
         return Vector2.zero;

@@ -10,12 +10,34 @@ public class BoidPath : MonoBehaviour
 
     private void Awake()
     {
-        var transforms = new List<Transform>();
-        GetComponentsInChildren(true, transforms);
-
-        foreach(var t in transforms)
+        foreach (Transform child in transform)
         {
-            positions.Add(t.position);
+            positions.Add(child.position);
         }
+    }
+
+    const float wayPointGizmoRadius = 0.25f;
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            int j = GetNextIndex(i);
+            Gizmos.DrawSphere(GetWayPoint(i), wayPointGizmoRadius);
+            Gizmos.DrawLine(GetWayPoint(i), GetWayPoint(j));
+        }
+    }
+
+    private int GetNextIndex(int currentIndex)
+    {
+        if (currentIndex + 1 == transform.childCount) return 0;
+        else return currentIndex + 1;
+    }
+
+    private Vector3 GetWayPoint(int index)
+    {
+        return transform.GetChild(index).position;
     }
 }
