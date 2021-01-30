@@ -18,13 +18,13 @@ public class BoidPath : MonoBehaviour
         }
     }
     
-    private int GetNextIndex(int currentIndex)
+    public int GetNextIndex(int currentIndex)
     {
         if (currentIndex + 1 == transform.childCount) return 0;
         else return currentIndex + 1;
     }
 
-    private Vector3 GetWayPoint(int index)
+    public Vector3 GetWayPoint(int index)
     {
         return transform.GetChild(index).position;
     }
