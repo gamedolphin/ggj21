@@ -12,8 +12,6 @@ public class Bullet : MonoBehaviour
     Color defaultColor;
     SpriteRenderer spriteRenderer;
 
-    Shoot shootComponent;
-
     private void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -23,7 +21,6 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        shootComponent = FindObjectOfType<Shoot>();
         StartCoroutine(ShowMuzzleFlash());
     }
 
@@ -46,11 +43,4 @@ public class Bullet : MonoBehaviour
         Instantiate(impactFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
-
-    private void OnDestroy()
-    {
-        shootComponent.IsBulletActive = false;
-    }
-
-
 }
