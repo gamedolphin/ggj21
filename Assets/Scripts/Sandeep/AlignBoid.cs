@@ -56,6 +56,7 @@ public class AlignBoid : MonoBehaviour, IBoid
         var count = 0;
         foreach (var boid in allBoids)
         {
+            if (boid == null) continue;
             if (boid.gameObject == gameObject) continue;
             var diff = rBody.position - boid.RBody.position;
             var distance = diff.magnitude;

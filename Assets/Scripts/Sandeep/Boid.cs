@@ -34,10 +34,18 @@ public class Boid : MonoBehaviour
     public Rect WorldRect = new Rect(0,0,20,20);
 
     private List<IBoid> otherBehaviours = new List<IBoid>();
+    private System.Action<Boid> onDestroy;
+
+    public bool IsBad = false;
 
     private void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
+    }
+
+    public void Initialize(System.Action<Boid> onDes)
+    {
+        onDestroy = onDes;
     }
 
     public Boid AddBehaviour(IBoid behaviour)
@@ -61,5 +69,10 @@ public class Boid : MonoBehaviour
     {
          var rotation = Quaternion.LookRotation(rBody.velocity);
          rBody.MoveRotation(rotation);
+    }
+
+    private void OnDestroy()
+    {
+        onDestroy?.Invoke(this);
     }
 }
