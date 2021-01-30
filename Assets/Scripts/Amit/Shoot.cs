@@ -17,9 +17,11 @@ public class Shoot : MonoBehaviour
 
     int currentAmmo;
     public bool IsBulletActive { get; set; }
+    PauseMenu pauseMenu;
 
     private void Start()
     {
+        pauseMenu = FindObjectOfType<PauseMenu>();
         IsBulletActive = false;
         currentAmmo = maxAmmo;
         UpdateAmmoText();
@@ -27,6 +29,8 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
+        if (pauseMenu.IsGamePaused()) return;
+
         LookAtMousePosition();
         if(Input.GetMouseButtonDown(0) && HasAmmo() && !IsBulletActive)
         {

@@ -27,8 +27,6 @@ public class Bullet : MonoBehaviour
         StartCoroutine(ShowMuzzleFlash());
     }
 
-    
-
     private IEnumerator ShowMuzzleFlash()
     {
         spriteRenderer.sprite = muzzleFlashSprite;
