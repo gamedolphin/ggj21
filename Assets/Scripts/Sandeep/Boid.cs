@@ -35,6 +35,8 @@ public class Boid : MonoBehaviour
     public float CohesionMultiplier = 1.0f;
     public float PathMultiplier = 4.0f;
 
+    public float TargetTimeout = 5.0f;
+
     public Rect WorldRect = new Rect(0, 0, 20, 20);
 
     private List<IBoid> otherBehaviours = new List<IBoid>();

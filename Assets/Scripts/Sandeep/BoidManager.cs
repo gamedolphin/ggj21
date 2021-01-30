@@ -26,6 +26,8 @@ public class BoidManager : MonoBehaviour
     public float CohesionMultiplier = 1.0f;
     public float PathMultiplier = 4.0f;
 
+    public float TargetTimeout = 5.0f;
+
     private void Start()
     {
         var badBoid = Random.Range(0, initialBoidCount);
@@ -46,11 +48,6 @@ public class BoidManager : MonoBehaviour
         boid.transform.position = pos;
         boid.WorldRect = world;
         boid.IsBad = isBad;
-        boid.Path = path;
-        boid.SeparationMultiplier = SeparationMultiplier;
-        boid.AlignmentMultiplier = AlignmentMultiplier;
-        boid.CohesionMultiplier = CohesionMultiplier;
-        boid.PathMultiplier = PathMultiplier;
         var indx = boids.Count;
         boid.Initialize((b) => {
             boids.Remove(b);
@@ -63,6 +60,14 @@ public class BoidManager : MonoBehaviour
     {
         foreach (var boid in boids)
         {
+
+            boid.Path = path;
+            boid.SeparationMultiplier = SeparationMultiplier;
+            boid.AlignmentMultiplier = AlignmentMultiplier;
+            boid.CohesionMultiplier = CohesionMultiplier;
+            boid.PathMultiplier = PathMultiplier;
+            boid.TargetTimeout = TargetTimeout;
+
             boid.UpdateBoid(boids);
         }
     }

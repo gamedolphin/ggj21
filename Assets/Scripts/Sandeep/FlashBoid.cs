@@ -12,6 +12,8 @@ public class FlashBoid : MonoBehaviour
     public Color originalColor;
     public Color highlightColor;
 
+    private float sinceLast = 0f;
+
     private void Awake()
     {
         boid = GetComponent<Boid>();
@@ -22,7 +24,7 @@ public class FlashBoid : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetButton("Jump") && boid.IsBad)
+        if (Input.GetButton("Jump") && boid.IsBad && Time.time - sinceLast > boid.TargetTimeout)
         {
             sp.DOColor(highlightColor, 0.25f).SetOptions(false)
                 .SetEase(Ease.InFlash, 2, 0)
@@ -30,6 +32,8 @@ public class FlashBoid : MonoBehaviour
                 .OnComplete(DoneFlashing);
 
             transform.DOScale(1.5f, 1.5f);
+
+            sinceLast = Time.time;
         }
     }
 
