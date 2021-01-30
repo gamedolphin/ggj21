@@ -30,6 +30,7 @@ public class Boid : MonoBehaviour
     public float SeparationMultiplier = 1.5f;
     public float AlignmentMultiplier = 1.0f;
     public float CohesionMultiplier = 1.0f;
+    public float PathMultiplier = 4.0f;
 
     public Rect WorldRect = new Rect(0,0,20,20);
 
@@ -37,6 +38,8 @@ public class Boid : MonoBehaviour
     private System.Action<Boid> onDestroy;
 
     public bool IsBad = false;
+
+    public BoidPath Path = null;
 
     private void Awake()
     {

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(TargetBoid),typeof(Boid))]
+[RequireComponent(typeof(Boid))]
 public class CohesionBoid : MonoBehaviour, IBoid
 {
 
     private Rigidbody2D rBody;
-    private TargetBoid boid;
+    private Boid boid;
 
     [SerializeField]
     private float alignCircle = 10;
@@ -15,15 +15,22 @@ public class CohesionBoid : MonoBehaviour, IBoid
     [SerializeField]
     private LayerMask layer;
 
+    private bool hasPath = false;
+
     private void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
-        boid = GetComponent<TargetBoid>();
-        GetComponent<Boid>().AddBehaviour(this);
+        boid = GetComponent<Boid>().AddBehaviour(this);
+        hasPath = boid.Path != null;
     }
 
     public Vector2 UpdateBoid(List<Boid> allBoids)
     {
+        if (hasPath)
+        {
+            return Vector2.zero;
+        }
+
         var sum = Vector2.zero;
         var count = 0;
         foreach (var boid in allBoids)
@@ -42,7 +49,7 @@ public class CohesionBoid : MonoBehaviour, IBoid
         {
 
             sum /= count;
-            boid.SetTarget(sum);
+            return TargetBoid.Steer(sum, rBody, 10, boid) * boid.CohesionMultiplier;
         }
 
         return Vector2.zero;

@@ -15,14 +15,22 @@ public class AlignBoid : MonoBehaviour, IBoid
     [SerializeField]
     private LayerMask layer;
 
+    private bool hasPath = false;
+
     private void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
         boid = GetComponent<Boid>().AddBehaviour(this);
+
+        hasPath = boid.Path != null;
     }
 
     public Vector2 UpdateBoid(List<Boid> allBoids)
     {
+        if (hasPath)
+        {
+            return Vector2.zero;
+        }
 
         /*
           float neighbordist = 50;

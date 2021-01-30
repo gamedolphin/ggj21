@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(TargetBoid),typeof(Boid))]
+[RequireComponent(typeof(Boid))]
 public class RandomBoid : MonoBehaviour, IBoid
 {
     private Rigidbody2D rBody;
-    private TargetBoid boid;
+    private Boid boid;
 
     [SerializeField]
     private float distanceForward = 2;
@@ -16,9 +16,7 @@ public class RandomBoid : MonoBehaviour, IBoid
     private void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
-        boid = GetComponent<TargetBoid>();
-
-        GetComponent<Boid>().AddBehaviour(this);
+        boid = GetComponent<Boid>().AddBehaviour(this);
     }
 
     public Vector2 UpdateBoid(List<Boid> allBoids)
@@ -29,8 +27,6 @@ public class RandomBoid : MonoBehaviour, IBoid
 
         var target = pointInFuture + randomCircle*radius;
 
-        boid.SetTarget(target);
-
-        return Vector2.zero;
+        return TargetBoid.Steer(target, rBody, 10, boid);
     }
 }

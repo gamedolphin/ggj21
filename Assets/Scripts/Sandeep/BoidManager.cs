@@ -18,6 +18,14 @@ public class BoidManager : MonoBehaviour
     [SerializeField]
     private Rect worldContainer;
 
+    [SerializeField]
+    private BoidPath path;
+
+    public float SeparationMultiplier = 1.5f;
+    public float AlignmentMultiplier = 1.0f;
+    public float CohesionMultiplier = 1.0f;
+    public float PathMultiplier = 4.0f;
+
     private void Start()
     {
         var badBoid = Random.Range(0, initialBoidCount);
@@ -38,6 +46,11 @@ public class BoidManager : MonoBehaviour
         boid.transform.position = pos;
         boid.WorldRect = world;
         boid.IsBad = isBad;
+        boid.Path = path;
+        boid.SeparationMultiplier = SeparationMultiplier;
+        boid.AlignmentMultiplier = AlignmentMultiplier;
+        boid.CohesionMultiplier = CohesionMultiplier;
+        boid.PathMultiplier = PathMultiplier;
         var indx = boids.Count;
         boid.Initialize((b) => {
             boids.Remove(b);
