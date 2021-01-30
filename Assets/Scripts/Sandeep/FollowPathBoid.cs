@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [RequireComponent(typeof(Boid))]
 public class FollowPathBoid : MonoBehaviour, IBoid
@@ -27,14 +28,16 @@ public class FollowPathBoid : MonoBehaviour, IBoid
             return Vector2.zero;
         }
 
+        var positions = path.positions.Select(p => p.position).ToList();
+
         var worldRecord = float.PositiveInfinity;
         var pos = rBody.position + rBody.velocity.normalized * pathPredict;
         Vector3 normal = Vector3.zero;
         Vector3 target = Vector3.zero;
-        for (int i = 0; i < path.positions.Count; i++)
+        for (int i = 0; i < positions.Count; i++)
         {
-            var a = path.positions[i];
-            var b = path.positions[(i + 1) % path.positions.Count]; // wrap around
+            var a = positions[i];
+            var b = positions[(i + 1) % positions.Count]; // wrap around
 
             var normalPoint = GetNormalPoint(pos, a, b);
 
@@ -45,8 +48,8 @@ public class FollowPathBoid : MonoBehaviour, IBoid
                 normalPoint.y > Mathf.Max(a.y, b.y))
             {
                 normalPoint = b;
-                a = path.positions[(i + 1) % path.positions.Count];
-                b = path.positions[(i + 2) % path.positions.Count];
+                a = positions[(i + 1) % positions.Count];
+                b = positions[(i + 2) % positions.Count];
                 dir = b - a;
             }
 

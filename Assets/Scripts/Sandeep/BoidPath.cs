@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoidPath : MonoBehaviour
 {
-    public List<Vector3> positions = new List<Vector3>();
+    public List<Transform> positions = new List<Transform>();
 
     public float radius;
 
@@ -12,7 +12,7 @@ public class BoidPath : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            positions.Add(child.position);
+            positions.Add(child);
         }
     }
 
