@@ -70,8 +70,9 @@ public class Boid : MonoBehaviour
 
     private void SteerToVelocity()
     {
-         // var rotation = Quaternion.LookRotation(rBody.velocity);
-         // rBody.MoveRotation(rotation);
+        Vector2 v = rBody.velocity;
+        var angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg ;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
     }
 
     private void OnDestroy()
