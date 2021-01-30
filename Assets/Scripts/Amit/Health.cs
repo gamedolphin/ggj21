@@ -6,13 +6,16 @@ using TMPro;
 public class Health : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] GameObject deathFx;
     [SerializeField] int maxHealth = 100;
     [SerializeField] int damageFromBoid = 100;
 
     int currentHealth;
+    Animator myAnim;
 
     private void Start()
     {
+        myAnim = GetComponent<Animator>();
         currentHealth = maxHealth;
         UpdateHealthText();
     }
@@ -30,8 +33,7 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        //todo: add death fx
-        Destroy(gameObject);
+        myAnim.SetTrigger("die");
     }
 
     private void UpdateHealthText()
@@ -45,5 +47,12 @@ public class Health : MonoBehaviour
         {
             Damage(damageFromBoid);
         }
+    }
+
+    //Animation Event
+    public void PlayDeathVfx()
+    {
+        Instantiate(deathFx, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

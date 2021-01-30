@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 2774280003792239187}
   - component: {fileID: 2774280003792239186}
   - component: {fileID: 3987968577728241758}
+  - component: {fileID: 2774280003847499033}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -280,3 +281,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 193d5359e2fb64477a3a4626d117f5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  deathFx: {fileID: 3421726726035959646, guid: 5ec4f6749f34540d5bc6550febe22c13, type: 3}
+  maxHealth: 100
+  damageFromBoid: 100
+--- !u!95 &2774280003847499033
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774280003792239190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68ee3e2bdd5c14cdf8f5cdfcc3738372, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
