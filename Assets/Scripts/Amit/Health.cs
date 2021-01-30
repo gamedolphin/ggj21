@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] int maxHealth = 100;
+    [SerializeField] int damageFromBoid = 100;
 
     int currentHealth;
 
@@ -36,5 +37,13 @@ public class Health : MonoBehaviour
     private void UpdateHealthText()
     {
         healthText.text = string.Format("Health: {0}", currentHealth);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Boid")
+        {
+            Damage(damageFromBoid);
+        }
     }
 }

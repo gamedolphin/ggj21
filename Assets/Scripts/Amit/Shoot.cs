@@ -33,7 +33,7 @@ public class Shoot : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && HasAmmo())
         {
             ShootBullet();
-            ReduceAmmo(1);
+            //ReduceAmmo(1); todo: remove ammo completely if removed from design
         }
     }
 
