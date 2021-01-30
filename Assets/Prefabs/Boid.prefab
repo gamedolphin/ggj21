@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 8417949872598004945}
   - component: {fileID: -8452356042713643695}
   - component: {fileID: -5212736589046510579}
+  - component: {fileID: 2570474497834342972}
   m_Layer: 8
   m_Name: Boid
   m_TagString: Boid
@@ -269,3 +270,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bc92c130e955f86b9175f3196148f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2570474497834342972
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3528936320095691153}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c94fc5ef7e8f6ee04a82fc3ed9f7dbb4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
