@@ -735,6 +735,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
+      propertyPath: PathMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: initialBoidCount
       value: 100
       objectReference: {fileID: 0}
