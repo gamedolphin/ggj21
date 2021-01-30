@@ -2,66 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public interface IBoid {
+    public Vector2 UpdateBoid(List<Boid> allBoids);
+}
+
 public class Boid : MonoBehaviour
 {
     private Rigidbody2D rBody;
 
-    private Vector2 target = new Vector2(10, 10);
-
     [SerializeField]
     private float maxSpeed = 10;
 
-    [SerializeField]
-    private float stoppingDistance = 10;
+    public float MaxSpeed {
+        get
+        {
+            return maxSpeed;
+        }
+    }
+
+    public Rigidbody2D RBody {
+        get
+        {
+            return rBody;
+        }
+    }
+
+    public float SeparationMultiplier = 1.5f;
+    public float AlignmentMultiplier = 1.0f;
+    public float CohesionMultiplier = 1.0f;
+
+    public Rect WorldRect = new Rect(0,0,20,20);
+
+    private List<IBoid> otherBehaviours = new List<IBoid>();
 
     private void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
     }
 
-
-    private void Update()
+    public Boid AddBehaviour(IBoid behaviour)
     {
-        MoveToTarget();
+        otherBehaviours.Add(behaviour);
+        return this;
+    }
+
+    public void UpdateBoid(List<Boid> allBoids)
+    {
+        var force = Vector2.zero;
+        foreach(var boid in otherBehaviours) {
+            force += boid.UpdateBoid(allBoids);
+        }
+        rBody.AddForce(force);
+
         SteerToVelocity();
-    }
-
-    private void MoveToTarget()
-    {
-        var desired = target - rBody.position;
-        var distance = desired.magnitude;
-        desired.Normalize();
-
-        if (distance < stoppingDistance)
-        {
-            desired = Map(distance, 0, stoppingDistance, 0, maxSpeed) * desired;
-        }
-        else
-        {
-            desired = desired * maxSpeed;
-        }
-
-        var steerForce = desired - rBody.velocity;
-
-        rBody.AddForce(steerForce);
-    }
-
-
-    public float Map(float x, float in_min, float in_max, float out_min, float out_max)
-    {
-        return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     }
 
     private void SteerToVelocity()
     {
-        var movementDirection = Vector2.Angle(rBody.velocity, Vector2.left) + Mathf.PI/2;
-
-        rBody.SetRotation(movementDirection);
+         var rotation = Quaternion.LookRotation(rBody.velocity);
+         rBody.MoveRotation(rotation);
     }
-
-    public void SetTarget(Vector2 _target)
-    {
-        target = _target;
-    }
-
 }
