@@ -3,7 +3,7 @@ using UnityEngine;
 public class DebugBoidInput : MonoBehaviour
 {
     [SerializeField]
-    private Boid boid;
+    private TargetBoid boid;
 
     private void Update()
     {
