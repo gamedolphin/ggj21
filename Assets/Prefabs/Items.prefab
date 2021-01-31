@@ -1084,7 +1084,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CONTROLS \nMove - WASD\nAim - Mouse Pointer | Shoot - Click"
+  m_text: "CONTROLS \nMove - WASD\nAim - Mouse Pointer | Shoot - Click\nFind Your
+    Lost Thought - Spacebar"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb448a50ef90545409e771e9848074f5, type: 2}
   m_sharedMaterial: {fileID: -3810818463195575696, guid: cb448a50ef90545409e771e9848074f5, type: 2}
