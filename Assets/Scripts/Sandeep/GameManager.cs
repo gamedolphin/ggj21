@@ -5,6 +5,7 @@ using UnityEngine;
 
 public delegate void OnGameWin(Vector3 position);
 public delegate void OnGameLost();
+public delegate void OnLoadNextLevel();
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     public event OnGameWin onGameWin;
     public event OnGameLost onGameLost;
+    public event OnLoadNextLevel onLoadNextLevel;
 
     public void GameWon(Vector3 pos)
     {
@@ -52,5 +54,10 @@ public class GameManager : MonoBehaviour
                 GameWon(pos);
             }
         }
+    }
+
+    public void LoadNextLevel()
+    {
+        onLoadNextLevel?.Invoke();
     }
 }

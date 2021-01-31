@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
 
     Color32 startColor = new Color32(35, 66, 74, 255);
 
+    public string FirstLevelName = "Level 1";
+
     private void Start()
     {
         buttonText.color = startColor;
@@ -20,14 +22,15 @@ public class MainMenu : MonoBehaviour
     public void StartSequence()
     {
         anim.SetTrigger("transition");
+        StartCoroutine(FadeOutButton());
     }
 
     public void StartLoadLevelCoroutine()
     {
-        StartCoroutine(LoadNextScene());       
+        StartCoroutine(LoadNextScene());
     }
 
-    private IEnumerator LoadNextScene()
+    private IEnumerator FadeOutButton()
     {
         float timeScale = 0;
         Color32 endColor = new Color32(35, 66, 74, 0);
@@ -39,6 +42,10 @@ public class MainMenu : MonoBehaviour
             timeScale += Time.deltaTime / timeToFadeButton;
             yield return null;
         }
-
+    }
+    private IEnumerator LoadNextScene()
+    {
+        yield return new WaitForSeconds(timeToFadeButton + 0.2f);
+        SceneManager.LoadScene(FirstLevelName);
     }
 }

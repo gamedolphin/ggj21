@@ -35,7 +35,7 @@ public class FlashBoid : MonoBehaviour
             return;
         }
 
-        if (Input.GetButton("Jump") && Time.time - boid.TargetTimeout > sinceLast)
+        if (Input.GetButton("Jump") && (Time.time - boid.TargetTimeout > sinceLast || sinceLast == 0))
         {
             flashTween = sp.DOColor(highlightColor, 0.25f).SetOptions(false)
                 .SetEase(Ease.InFlash, 2, 0)
