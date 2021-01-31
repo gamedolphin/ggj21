@@ -423,8 +423,40 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TITLE \n\nWrite all the lines that have been unlocked\nThey all sit here\nLike
-    idiots with nothing else to do\n"
+  m_text: 'I''m a hack
+
+    You can''t hange
+
+    Is this even worth it?
+
+    Life
+    is a bitch!
+
+    It''s too much effort
+
+    I''m just not good enough
+
+    We
+    should come back to this
+
+    Let''s just fo out
+
+    Give it up
+
+    No point
+    in trying so hard
+
+    You''re a failure
+
+    You''ll never succeed
+
+    What
+    were you thinking?
+
+    When will you get serious in life?
+
+    Will this put
+    dinner on the table?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb448a50ef90545409e771e9848074f5, type: 2}
   m_sharedMaterial: {fileID: -3810818463195575696, guid: cb448a50ef90545409e771e9848074f5, type: 2}
@@ -652,7 +684,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2964430954046233077}
   m_Enabled: 1
-  m_Alpha: 0.7
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
