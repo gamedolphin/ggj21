@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseImage: {fileID: 658457102}
-  endColor: {r: 0.6415094, g: 0.14747873, b: 0.11196155, a: 1}
-  fullColor: {r: 0.2016732, g: 0.41509432, b: 0.23884302, a: 1}
+  endColor: {r: 0.7169812, g: 0.4665492, b: 0.38216448, a: 1}
+  fullColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &658457100
 GameObject:
   m_ObjectHideFlags: 0
