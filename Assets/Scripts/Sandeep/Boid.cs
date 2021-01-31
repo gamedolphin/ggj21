@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public interface IBoid
 {
@@ -13,6 +14,9 @@ public class Boid : MonoBehaviour
 
     [SerializeField]
     private float maxSpeed = 10;
+
+    [SerializeField]
+    private SpriteRenderer deadBoidPrefab;
 
     public float MaxSpeed
     {
@@ -102,6 +106,15 @@ public class Boid : MonoBehaviour
     private void OnDestroy()
     {
         onDestroy?.Invoke(this);
+
+        var deadBoid = Instantiate(deadBoidPrefab);
+
+        deadBoid.transform.position = rBody.position;
+        deadBoid.transform.rotation = transform.rotation;
+        var seq = DOTween.Sequence();
+        seq.Append(deadBoid.transform.DOMove(rBody.position + Random.insideUnitCircle * 4, 2f));
+        seq.Append(deadBoid.DOFade(0, 1f));
+        seq.OnComplete(() => GameObject.Destroy(deadBoid.gameObject));
 
         if (IsBad)
         {

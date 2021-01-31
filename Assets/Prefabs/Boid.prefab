@@ -77,10 +77,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 15
+  deadBoidPrefab: {fileID: 7947499493830985515, guid: d91edb65055d118ec9476600370fd51d, type: 3}
   SeparationMultiplier: 1.5
   AlignmentMultiplier: 1
   CohesionMultiplier: 1
   PathMultiplier: 4
+  AvoidCircle: 10
   TargetTimeout: 5
   WorldRect:
     serializedVersion: 2
@@ -90,6 +92,8 @@ MonoBehaviour:
     height: 20
   IsBad: 0
   Path: {fileID: 0}
+  AlignCircle: 2
+  IsInverted: 0
 --- !u!114 &2220242165993850345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3168677ef4abde19455379d543dedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avoidCircle: 1
   layer:
     serializedVersion: 2
     m_Bits: 256
@@ -153,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824073430f780a1b2aa0050219e42441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alignCircle: 2
   layer:
     serializedVersion: 2
     m_Bits: 256
