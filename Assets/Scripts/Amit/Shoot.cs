@@ -15,6 +15,12 @@ public class Shoot : MonoBehaviour
     [SerializeField] float bulletSpeed = 20f;
     [SerializeField] int maxAmmo = 20;
 
+    [SerializeField]
+    private AudioSource source;
+
+    [SerializeField]
+    private AudioClip shootClip;
+
     int currentAmmo;
     PauseMenu pauseMenu;
 
@@ -22,6 +28,7 @@ public class Shoot : MonoBehaviour
     {
         currentAmmo = maxAmmo;
         UpdateAmmoText();
+        source = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -50,6 +57,8 @@ public class Shoot : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, reticule.position, transform.rotation);
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(transform.up * bulletSpeed, ForceMode2D.Impulse);
+
+        source.Play();
     }
 
     private bool HasAmmo()

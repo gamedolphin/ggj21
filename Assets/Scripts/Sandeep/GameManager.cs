@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Time.timeScale = 1.0f;
+        gameOver = false;
     }
 
     private void Update()
