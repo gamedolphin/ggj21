@@ -55,6 +55,14 @@ public class BoidManager : MonoBehaviour
             CreateBoid(pos, worldContainer, i==badBoid);
         }
         GameManager.Instance.flashTime = TargetTimeout;
+        if (KillOthers)
+        {
+            ScoreKeeper.Instance.AddScore(0);
+        }
+        else
+        {
+            ScoreKeeper.Instance.AddScore(initialBoidCount);
+        }
     }
 
     private void CreateBoid(Vector2 pos, Rect world, bool isBad)
@@ -79,6 +87,27 @@ public class BoidManager : MonoBehaviour
     {
         boids.Remove(b);
         GameManager.Instance.OnBoidDestroyed(KillOthers, b.RBody.position);
+
+        if (GameManager.Instance.gameOver)
+        {
+            return;
+        }
+
+        if (KillOthers)
+        {
+            if (!b.IsBad)
+            {
+                ScoreKeeper.Instance.AddScore(1);
+            }
+        }
+        else
+        {
+            if (!b.IsBad)
+            {
+                ScoreKeeper.Instance.AddScore(-1);
+            }
+        }
+
     }
 
     private void Update()
