@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class LevelWon : MonoBehaviour
 {
-    public void OnNextLevel()
+    public void LoadNextLevel()
     {
+        Debug.Log("LOAD NEXT");
         GameManager.Instance.LoadNextLevel();
     }
 }

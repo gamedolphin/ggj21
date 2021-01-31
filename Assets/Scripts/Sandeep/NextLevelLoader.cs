@@ -19,6 +19,7 @@ public class NextLevelLoader : MonoBehaviour
 
     private void LoadNextLevel()
     {
+        Debug.Log("HEre");
         SceneManager.LoadScene(NextLevelName);
     }
 }

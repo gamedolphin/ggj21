@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4221641495801892242}
         m_TargetAssemblyTypeName: LevelWon, Assembly-CSharp
-        m_MethodName: OnNextLevel
+        m_MethodName: LoadNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

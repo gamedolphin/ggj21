@@ -20,14 +20,14 @@ public class Shoot : MonoBehaviour
 
     private void Start()
     {
-        pauseMenu = FindObjectOfType<PauseMenu>();
         currentAmmo = maxAmmo;
         UpdateAmmoText();
     }
 
     private void Update()
     {
-        if (pauseMenu.IsGamePaused()) return;
+        if (GameManager.Instance.gamePaused) return;
+        if (GameManager.Instance.gameOver) return;
 
         LookAtMousePosition();
         if(Input.GetMouseButtonDown(0) && HasAmmo())
@@ -69,4 +69,3 @@ public class Shoot : MonoBehaviour
     }
 
 }
- 

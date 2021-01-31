@@ -11,20 +11,19 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu = GetComponentInChildren<Canvas>();
         pauseMenu.enabled = false;
+
+        GameManager.Instance.onGamePause += TogglePause;
     }
 
-    private void Update()
+    private void TogglePause(bool pause)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pause)
         {
-            if (!IsGamePaused())
-            {
-                Pause();
-            }
-            else
-            {
-                Resume();
-            }
+            Pause();
+        }
+        else
+        {
+            Resume();
         }
     }
 

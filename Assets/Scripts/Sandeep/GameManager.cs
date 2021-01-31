@@ -6,6 +6,7 @@ using UnityEngine;
 public delegate void OnGameWin(Vector3 position);
 public delegate void OnGameLost();
 public delegate void OnLoadNextLevel();
+public delegate void OnGamePause(bool state);
 
 public class GameManager : MonoBehaviour
 {
@@ -26,15 +27,20 @@ public class GameManager : MonoBehaviour
     public event OnGameWin onGameWin;
     public event OnGameLost onGameLost;
     public event OnLoadNextLevel onLoadNextLevel;
+    public event OnGamePause onGamePause;
+
+    public bool gameOver = false;
 
     public void GameWon(Vector3 pos)
     {
         onGameWin?.Invoke(pos);
+        gameOver = true;
     }
 
     public void GameLost()
     {
         onGameLost?.Invoke();
+        gameOver = true;
     }
 
     private int boidCount = 0;
@@ -58,6 +64,18 @@ public class GameManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        Debug.Log("Load next level");
         onLoadNextLevel?.Invoke();
+    }
+
+    public bool gamePaused = false;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gamePaused = !gamePaused;
+            onGamePause(gamePaused);
+        }
     }
 }
