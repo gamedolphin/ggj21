@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameOver : MonoBehaviour
 {
     Canvas gameOver;
     [SerializeField] float loadDelay = 1f;
+
+    [SerializeField]
+    private TMPro.TextMeshProUGUI scoreText;
 
     float timePassed = 0f;
 
@@ -36,6 +40,7 @@ public class GameOver : MonoBehaviour
 
     public IEnumerator LoadGameOverMenu()
     {
+        scoreText.text = "SCORE : " + ScoreKeeper.Instance.score;
         while (timePassed < loadDelay)
         {
             timePassed += Time.deltaTime;
