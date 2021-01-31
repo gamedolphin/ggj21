@@ -54,7 +54,7 @@ public class BoidManager : MonoBehaviour
             }
             CreateBoid(pos, worldContainer, i==badBoid);
         }
-
+        GameManager.Instance.flashTime = TargetTimeout;
     }
 
     private void CreateBoid(Vector2 pos, Rect world, bool isBad)

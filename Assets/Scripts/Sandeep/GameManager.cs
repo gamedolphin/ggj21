@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     public event OnLoadNextLevel onLoadNextLevel;
     public event OnGamePause onGamePause;
 
+    public float flashTime = 2.0f;
+
     public bool gameOver = false;
 
     public void GameWon(Vector3 pos)
@@ -69,6 +71,11 @@ public class GameManager : MonoBehaviour
     }
 
     public bool gamePaused = false;
+
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+    }
 
     private void Update()
     {
