@@ -425,38 +425,37 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'I''m a hack
 
-    You can''t hange
+    I can''t change
 
     Is this even worth it?
 
-    Life
-    is a bitch!
+    A failure.
+    That''s all I am
 
     It''s too much effort
 
-    I''m just not good enough
+    I will never be good enough
 
-    We
-    should come back to this
+    Maybe
+    tomorrow?
 
-    Let''s just fo out
+    I''m clueless
 
     Give it up
 
-    No point
-    in trying so hard
+    No point trying so hard
 
-    You''re a failure
+    You''re
+    a failure
 
     You''ll never succeed
 
-    What
-    were you thinking?
+    What were you thinking?
 
-    When will you get serious in life?
+    When will
+    you get serious in life?
 
-    Will this put
-    dinner on the table?'
+    Will this put dinner on the table?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb448a50ef90545409e771e9848074f5, type: 2}
   m_sharedMaterial: {fileID: -3810818463195575696, guid: cb448a50ef90545409e771e9848074f5, type: 2}

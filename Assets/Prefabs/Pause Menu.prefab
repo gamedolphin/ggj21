@@ -2168,26 +2168,26 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Let''s do this tomoorrow
+  m_text: 'I can''t do this
 
-    I can''t do this
+    Stop wasting time
 
-    Stop wasting your
-    time
+    Nobody likes me
 
-    He''s like, so weird
+    Sometimes
+    I worry about the future
 
-    Sometimes I worry about him
+    Let''s play that game instead
 
-    Let''s play
-    that game instead
-
-    You''ll never be that good
+    I will never
+    be that good
 
     It''s easier to quit
 
-    Most
-    people fail, y''know'
+    Most people fail, y''know
+
+    I''ll
+    do this tomorrow'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb448a50ef90545409e771e9848074f5, type: 2}
   m_sharedMaterial: {fileID: -3810818463195575696, guid: cb448a50ef90545409e771e9848074f5, type: 2}
