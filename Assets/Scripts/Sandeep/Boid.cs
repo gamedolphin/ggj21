@@ -20,6 +20,11 @@ public class Boid : MonoBehaviour
         {
             return maxSpeed;
         }
+
+        set
+        {
+            maxSpeed = value;
+        }
     }
 
     public Rigidbody2D RBody
@@ -35,6 +40,8 @@ public class Boid : MonoBehaviour
     public float CohesionMultiplier = 1.0f;
     public float PathMultiplier = 4.0f;
 
+    public float AvoidCircle = 10;
+
     public float TargetTimeout = 5.0f;
 
     public Rect WorldRect = new Rect(0, 0, 20, 20);
@@ -46,6 +53,10 @@ public class Boid : MonoBehaviour
 
     public BoidPath Path = null;
 
+    public float AlignCircle = 2.0f;
+
+    public bool IsInverted = false;
+
     private void Awake()
     {
         rBody = GetComponent<Rigidbody2D>();
@@ -54,6 +65,13 @@ public class Boid : MonoBehaviour
     public void Initialize(System.Action<Boid> onDes)
     {
         onDestroy = onDes;
+        rBody.velocity = new Vector2(Random.Range(0, MaxSpeed/2), Random.Range(0, MaxSpeed/2));
+
+        var destroy = GetComponent<DestroyByBullet>();
+        if (destroy != null)
+        {
+            destroy.SetDestroyBullet(IsInverted);
+        }
     }
 
     public Boid AddBehaviour(IBoid behaviour)
@@ -87,7 +105,15 @@ public class Boid : MonoBehaviour
 
         if (IsBad)
         {
-            GameManager.Instance.GameWon(rBody.position);
+            if (IsInverted)
+            {
+                GameManager.Instance.GameLost();
+            }
+            else
+            {
+                GameManager.Instance.GameWon(rBody.position);
+            }
+
         }
     }
 }

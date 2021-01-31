@@ -10,9 +10,6 @@ public class CohesionBoid : MonoBehaviour, IBoid
     private Boid boid;
 
     [SerializeField]
-    private float alignCircle = 10;
-
-    [SerializeField]
     private LayerMask layer;
 
     private bool hasPath = false;
@@ -39,7 +36,7 @@ public class CohesionBoid : MonoBehaviour, IBoid
             var diff = rBody.position - boid.RBody.position;
             var distance = diff.magnitude;
 
-            if (distance > 0 && distance < alignCircle)
+            if (distance > 0 && distance < boid.AlignCircle)
             {
                 sum += boid.RBody.position;
                 count += 1;

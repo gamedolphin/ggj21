@@ -10,9 +10,6 @@ public class AvoidBoid : MonoBehaviour, IBoid
     private Boid boid;
 
     [SerializeField]
-    private float avoidCircle = 10;
-
-    [SerializeField]
     private LayerMask layer;
 
     private void Awake()
@@ -23,7 +20,7 @@ public class AvoidBoid : MonoBehaviour, IBoid
 
     public Vector2 UpdateBoid(List<Boid> allBoids)
     {
-        var otherBoids = Physics2D.OverlapCircleAll(rBody.position, avoidCircle, layer);
+        var otherBoids = Physics2D.OverlapCircleAll(rBody.position, boid.AvoidCircle, layer);
         var count = 0;
         var sum = Vector2.zero;
         var steer = Vector2.zero;

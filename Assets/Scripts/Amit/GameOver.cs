@@ -10,10 +10,22 @@ public class GameOver : MonoBehaviour
 
     float timePassed = 0f;
 
-    private void Start()
+    private void Awake()
     {
         gameOver = GetComponentInChildren<Canvas>();
         gameOver.enabled = false;
+
+        GameManager.Instance.onGameLost += OnGameLost;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.onGameLost -= OnGameLost;
+    }
+
+    private void OnGameLost()
+    {
+        StartGameOverMenuCoroutine();
     }
 
     public void StartGameOverMenuCoroutine()

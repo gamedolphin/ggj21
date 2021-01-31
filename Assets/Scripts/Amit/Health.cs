@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
     private void Die()
     {
         myAnim.SetTrigger("die");
-        FindObjectOfType<GameOver>().StartGameOverMenuCoroutine();
+        GameManager.Instance.GameLost();
     }
 
     private void UpdateHealthText()

@@ -28,6 +28,16 @@ public class BoidManager : MonoBehaviour
 
     public float TargetTimeout = 5.0f;
 
+    public float MinBoidSpeed = 5.0f;
+    public float MaxBoidSpeed = 20.0f;
+    public float AvoidCircle = 2.0f;
+    public float AlignCircle = 2.0f;
+
+    public List<Transform> SpawnPoints = new List<Transform>();
+    public float SpawnSpread = 1.0f;
+
+    public bool KillOthers = false;
+
     private void Start()
     {
         var badBoid = Random.Range(0, initialBoidCount);
@@ -35,6 +45,13 @@ public class BoidManager : MonoBehaviour
         {
             var pos = new Vector2(Random.Range(worldContainer.xMin, worldContainer.xMax),
                                   Random.Range(worldContainer.yMin, worldContainer.yMax));
+            if (SpawnPoints.Count > 0)
+            {
+                var randomSpawn = SpawnPoints[Random.Range(0, SpawnPoints.Count)];
+                var randomPos = randomSpawn.position;
+                pos = new Vector2(Random.Range(randomPos.x - SpawnSpread, randomPos.x + SpawnSpread),
+                                  Random.Range(randomPos.y - SpawnSpread, randomPos.y + SpawnSpread));
+            }
             CreateBoid(pos, worldContainer, i==badBoid);
         }
 
@@ -48,12 +65,20 @@ public class BoidManager : MonoBehaviour
         boid.transform.position = pos;
         boid.WorldRect = world;
         boid.IsBad = isBad;
+        boid.MaxSpeed = Random.Range(MinBoidSpeed, MaxBoidSpeed);
+        boid.IsInverted = KillOthers;
         var indx = boids.Count;
-        boid.Initialize((b) => {
-            boids.Remove(b);
-        });
+        boid.Initialize(OnBoidDestroyed);
 
         boids.Add(boid);
+
+        GameManager.Instance.OnBoidCreated();
+    }
+
+    private void OnBoidDestroyed(Boid b)
+    {
+        boids.Remove(b);
+        GameManager.Instance.OnBoidDestroyed(KillOthers, b.RBody.position);
     }
 
     private void Update()
@@ -67,7 +92,8 @@ public class BoidManager : MonoBehaviour
             boid.CohesionMultiplier = CohesionMultiplier;
             boid.PathMultiplier = PathMultiplier;
             boid.TargetTimeout = TargetTimeout;
-
+            boid.AvoidCircle = AvoidCircle;
+            boid.AlignCircle = AlignCircle;
             boid.UpdateBoid(boids);
         }
     }
