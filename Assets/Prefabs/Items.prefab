@@ -1053,7 +1053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -359, y: -29}
+  m_AnchoredPosition: {x: -435, y: -29}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6156833960689703961
@@ -1084,11 +1084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Initial text goes here.
-
-    Amit you can write anything you like
-
-'
+  m_text: "CONTROLS \nMove - WASD\nAim - Mouse Pointer | Shoot - Click"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb448a50ef90545409e771e9848074f5, type: 2}
   m_sharedMaterial: {fileID: -3810818463195575696, guid: cb448a50ef90545409e771e9848074f5, type: 2}
