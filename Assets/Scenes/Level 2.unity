@@ -932,7 +932,7 @@ MonoBehaviour:
   - {fileID: 2113073080}
   - {fileID: 1260437201}
   SpawnSpread: 1
-  KillOthers: 1
+  KillOthers: 0
 --- !u!4 &509236208291416487
 Transform:
   m_ObjectHideFlags: 0
