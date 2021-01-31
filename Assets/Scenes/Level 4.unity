@@ -934,6 +934,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Won
       objectReference: {fileID: 0}
+    - target: {fileID: 8502288640661115167, guid: 64257178741a0d24abfa5a4c4f2760bd, type: 3}
+      propertyPath: m_text
+      value: '
+
+        The thoughts in my mind
+
+        Want to break their binds
+
+        And
+        flow, the winds blow
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64257178741a0d24abfa5a4c4f2760bd, type: 3}
 --- !u!1 &4221641495801892241 stripped
