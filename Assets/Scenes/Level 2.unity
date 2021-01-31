@@ -845,11 +845,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: MaxBoidSpeed
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: MinBoidSpeed
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: borderBuffer
@@ -861,7 +861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: PathMultiplier
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: initialBoidCount
@@ -877,11 +877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: CohesionMultiplier
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: AlignmentMultiplier
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: SeparationMultiplier

@@ -747,11 +747,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: MaxBoidSpeed
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: MinBoidSpeed
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: borderBuffer
@@ -759,7 +759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: PathMultiplier
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 509236208999903667, guid: dff120228c1892d9680f846ac0886eb9, type: 3}
       propertyPath: initialBoidCount
