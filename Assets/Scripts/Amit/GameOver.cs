@@ -39,9 +39,9 @@ public class GameOver : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void LoadFirstLevel()
+    public void ReloadScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
 
