@@ -63,6 +63,8 @@ public class BoidManager : MonoBehaviour
         {
             ScoreKeeper.Instance.AddScore(initialBoidCount);
         }
+
+        GameManager.Instance.SetBoolCount(1);
     }
 
     private void CreateBoid(Vector2 pos, Rect world, bool isBad)

@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public float flashTime = 2.0f;
 
     public bool gameOver = false;
+    public int minBoolCount = 0;
 
     public void GameWon(Vector3 pos)
     {
@@ -51,11 +52,16 @@ public class GameManager : MonoBehaviour
         boidCount += 1;
     }
 
+    public void SetBoolCount(int i)
+    {
+        minBoolCount += i;
+    }
+
     public void OnBoidDestroyed(bool inverted, Vector3 pos)
     {
         boidCount -= 1;
 
-        if (boidCount == 1)
+        if (boidCount == minBoolCount)
         {
             if (inverted)
             {
@@ -77,11 +83,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
         gameOver = false;
         boidCount = 0;
+        minBoolCount = 0;
     }
 
     private void Start()
     {
-        Debug.Log("HEr");
         gameOver = false;
     }
 
