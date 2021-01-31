@@ -40,10 +40,9 @@ public class MainMenu : MonoBehaviour
 
         while (timeScale < 1)
         {
-            float lerpValue = Mathf.Max(1 - timeScale, 0);
+            float lerpValue = Mathf.Max(timeScale, 0);
             buttonText.color = Color32.Lerp(startColor, endColor, lerpValue);
             timeScale += Time.deltaTime / timeToFadeButton;
-            Debug.Log(lerpValue);
             yield return null;
         }
 
