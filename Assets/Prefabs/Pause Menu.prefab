@@ -1013,7 +1013,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3599202411898014102}
   m_Enabled: 1
-  m_Alpha: 0.7
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -2168,8 +2168,26 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TITLE \n\nWrite all the lines that have been unlocked\nThey all sit here\nLike
-    idiots with nothing else to do\n"
+  m_text: 'Let''s do this tomoorrow
+
+    I can''t do this
+
+    Stop wasting your
+    time
+
+    He''s like, so weird
+
+    Sometimes I worry about him
+
+    Let''s play
+    that game instead
+
+    You''ll never be that good
+
+    It''s easier to quit
+
+    Most
+    people fail, y''know'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb448a50ef90545409e771e9848074f5, type: 2}
   m_sharedMaterial: {fileID: -3810818463195575696, guid: cb448a50ef90545409e771e9848074f5, type: 2}
