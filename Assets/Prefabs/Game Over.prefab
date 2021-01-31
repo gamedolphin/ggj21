@@ -1258,6 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadDelay: 1
+  scoreText: {fileID: 4734402436187998584}
 --- !u!1 &5775574150548337529
 GameObject:
   m_ObjectHideFlags: 0
