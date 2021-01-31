@@ -2029,7 +2029,7 @@ MonoBehaviour:
     width: 28
     height: 16
   path: {fileID: 229497073}
-  SeparationMultiplier: 0.3
+  SeparationMultiplier: 0.5
   AlignmentMultiplier: 1
   CohesionMultiplier: 1
   PathMultiplier: 1
@@ -2125,7 +2125,7 @@ MonoBehaviour:
     width: 28
     height: 16
   path: {fileID: 885958186}
-  SeparationMultiplier: 0.3
+  SeparationMultiplier: 0.5
   AlignmentMultiplier: 1
   CohesionMultiplier: 1
   PathMultiplier: 1
