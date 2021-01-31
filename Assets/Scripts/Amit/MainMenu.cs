@@ -11,21 +11,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Animator anim;
 
     Color32 startColor = new Color32(35, 66, 74, 255);
-    bool isButtonPressed;
 
     private void Start()
     {
         buttonText.color = startColor;
-        isButtonPressed = false;
     }
 
     public void StartSequence()
     {
-        if (!isButtonPressed)
-        {
-            isButtonPressed = true;
-            anim.SetTrigger("transition");
-        }
+        anim.SetTrigger("transition");
     }
 
     public void StartLoadLevelCoroutine()
@@ -46,7 +40,5 @@ public class MainMenu : MonoBehaviour
             yield return null;
         }
 
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 }

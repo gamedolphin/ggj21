@@ -307,6 +307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6046c16ab910f4506bd573400bdd0d11, type: 3}
+--- !u!95 &1103666856 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5519559805984203881, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+  m_PrefabInstance: {fileID: 5519559804940384961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1267251160
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +613,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366983092}
   m_CullTransparentMesh: 1
+--- !u!1 &1817775751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5519559806746620998, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+  m_PrefabInstance: {fileID: 5519559804940384961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1817775752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817775751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7919d4fed93b14827a17c10f341f5525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialDelay: 2
+  transitionDuration: 1
+  anim: {fileID: 1103666856}
 --- !u!1 &1859010043
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +716,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1817775752}
+        m_TargetAssemblyTypeName: Transition, Assembly-CSharp
+        m_MethodName: StartTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2050302103}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: StartSequence
@@ -771,3 +808,61 @@ MonoBehaviour:
   buttonText: {fileID: 1366983094}
   timeToFadeButton: 0.5
   anim: {fileID: 2050302102}
+--- !u!1001 &5519559804940384961
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5519559806746620998, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_Name
+      value: Transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519559806746621001, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5519559805984203876, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: bd9f618dc437144c5addac1f5d072483, type: 3}
