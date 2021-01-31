@@ -34,7 +34,9 @@ public class Shoot : MonoBehaviour
     private void Update()
     {
         if (GameManager.Instance.gamePaused) return;
-        if (GameManager.Instance.gameOver) return;
+        if (GameManager.Instance.gameOver) {
+            return;
+        };
 
         LookAtMousePosition();
         if(Input.GetMouseButtonDown(0) && HasAmmo())

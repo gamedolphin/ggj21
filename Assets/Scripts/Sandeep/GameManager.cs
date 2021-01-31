@@ -76,6 +76,13 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         gameOver = false;
+        boidCount = 0;
+    }
+
+    private void Start()
+    {
+        Debug.Log("HEr");
+        gameOver = false;
     }
 
     private void Update()
