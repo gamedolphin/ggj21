@@ -135,7 +135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26, y: -29}
+  m_AnchoredPosition: {x: 26, y: -84}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &6114363664586931621
@@ -166,10 +166,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ammo: 999'
+  m_text: 'AMMO : 999'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f5b4d60e491874027939a1f0dd63ff59, type: 2}
-  m_sharedMaterial: {fileID: 636861810113596413, guid: f5b4d60e491874027939a1f0dd63ff59, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e80a0a63142834fac8f7328c0ee9ac68, type: 2}
+  m_sharedMaterial: {fileID: -3208134993420415455, guid: e80a0a63142834fac8f7328c0ee9ac68, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -269,7 +269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 26, y: -84}
+  m_AnchoredPosition: {x: 26, y: -29}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &6114363666006567028
@@ -300,10 +300,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health: 999'
+  m_text: 'HEALTH : 999'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f5b4d60e491874027939a1f0dd63ff59, type: 2}
-  m_sharedMaterial: {fileID: 636861810113596413, guid: f5b4d60e491874027939a1f0dd63ff59, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e80a0a63142834fac8f7328c0ee9ac68, type: 2}
+  m_sharedMaterial: {fileID: -3208134993420415455, guid: e80a0a63142834fac8f7328c0ee9ac68, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
