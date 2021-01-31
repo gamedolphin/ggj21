@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
     private IEnumerator LoadNextScene()
     {
         float timeScale = 0;
-        Color32 endColor = new Color32(0, 0, 0, 1);
+        Color32 endColor = new Color32(35, 66, 74, 0);
 
         while (timeScale < 1)
         {
